@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:700,400' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+
+<!-- Styles -->
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" /><!-- Bootstrap -->
+<link rel="stylesheet" href="font-awesome-4.0.3/css/font-awesome.css" type="text/css" /><!-- Font Awesome -->
+
+<link rel="stylesheet" type="text/css" media="all" href="css/daterangepicker-bs3.css" /><!-- Date Range Picker -->
+<link rel="stylesheet" href="css/style.css" type="text/css" /><!-- Style -->	
+<link rel="stylesheet" href="css/responsive.css" type="text/css" /><!-- Responsive -->
+
+
+
+
+
+    <!-- Script -->
+    <script src="js/jquery-1.10.2.js"></script><!-- Jquery -->
+    <script type="text/javascript"  src="js/d3.v2.js"></script><!-- VISITOR CHART -->
+    <script type="text/javascript"  src="js/nv.d3.js"></script><!-- VISITOR CHART -->
+    <script type="text/javascript"  src="js/live-updating-chart.js"></script><!-- VISITOR CHART -->
+    <script type="text/javascript"  src="js/bootstrap.min.js"></script><!-- Bootstrap -->
+    <script type="text/javascript"  src="js/script.js"></script><!-- Script -->
+    <script src="js/jquery.easypiechart.min.js"></script> <!-- Easy Pie Chart -->
+    <script src="js/easy-pie-chart.js"></script> <!-- Easy Pie Chart -->
+    <script src="js/skycons.js"></script> <!-- Skycons -->
+    <script src="js/enscroll-0.5.2.min.js"></script> <!-- Custom Scroll bar -->
+    <script src="js/moment.js"></script> <!-- Date Range Picker -->
+    <script src="js/daterangepicker.js"></script><!-- Date Range Picker -->
+    <script src="js/carousal-plugins.js"></script><!-- Carousal Widget -->
+    <script src="js/todo.js"></script><!-- Carousal Widget -->
+    <script src="js/ticker.js"></script><!-- Ticker -->
+
+
+    <script>
+        $(function() {
+            $('#toggle-widget .content').hide();
+            $('#toggle-widget h2:first').addClass('active').next().slideDown('slow');
+            $('#toggle-widget h2').click(function() {
+                if($(this).next().is(':hidden')) {
+                    $('#toggle-widget h2').removeClass('active').next().slideUp('slow');
+                    $(this).toggleClass('active').next().slideDown('slow');
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+<div class="responsive-menu">
+    <div class="responsive-menu-dropdown blue">
+        <a title="" class="blue">MENU <i class="fa fa-align-justify" ></i></a>
+    </div>
+
+    <ul>
+        <li id="intro4"><a href="wednesday_meal.html" title="" ><i class="fa fa-cutlery"></i>Today's Meal</a>
+            <ul>
+                <li><a href="wednesday_meal.html" title="">Monday</a></li>
+                <li><a href="wednesday_meal.html" title="">Tuesday</a></li>
+                <li><a href="wednesday_meal.html" title="">Wednesday</a></li>
+                <li><a href="wednesday_meal.html" title="">Thursday</a></li>
+                <li><a href="wednesday_meal.html" title="">Friday</a></li>
+                <li><a href="saturday_meal.html" title="">Saturday</a></li>
+                <li><a href="wednesday_meal.html" title="">Sunday</a></li>
+                <li><a href="" title="">Weekly Tips</a></li>
+            </ul>
+        </li>
+        <li id="intro5"><a href="week.html" title="" ><i class="fa fa-calendar"></i><span><i>20+</i></span>This Week</a></li>
+        <li><a href="list_fri.html" title="" ><i class="fa fa-shopping-cart"></i>Grocery List</a>
+            <ul>
+                <li><a href="list.html" title="">All Ingredients</a></li>
+                <li><a href="list_thur.html" title="">Thursday</a></li>
+                <li><a href="list_mon.html" title="">Monday</a></li>
+                <li><a href="list_fri.html" title="">Friday</a></li>
+                <li><a href="list_tues.html" title="">Tuesday</a></li>
+                <li><a href="list_sat.html" title="">Saturday</a></li>
+                <li><a href="list_wed.html" title="">Wednesday</a></li>
+                <li><a href="list_sun.html" title="">Sunday</a></li>
+            </ul>
+        </li>
+        <li><a href="" title="" ><i class="fa fa-thumbs-o-up"></i>Share</a></li>
+        <li><a href="" title="" ><i class="fa fa-money"></i>Earn cash</a></li>
+    </ul>
+</div>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="" />
+        </div>
+
+        <div aria-hidden="true" role="dialog" tabindex="-1" class="modal fade" id="add-post-title" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header blue">
+                        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                        <h4 class="modal-title">Setting Section</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" placeholder="TITLE" />
+                        <textarea placeholder="DESCRIPTION"  rows="5"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-dismiss="modal" class="btn btn-default black" type="button">Close</button>
+                        <button class="btn btn-primary blue" type="button">Save changes</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div>
+        </div>
+        <div class="header-alert">
+            <ul>
+                <li><a title="" class="message-btn"><i class="fa fa-envelope"></i><span>3</span></a>
+                    <div class="message">
+                        <span>You have 3 New Messages</span>
+                        <a href="#" title=""><img src="http://placehold.it/40x40" alt="" />Hey! How are You Diana. I waiting for you.
+                            toe Check. <p><i class="fa fa-clock-o"></i>3:45pm</p></a>
+                        <a href="#" title=""><img src="http://placehold.it/40x40" alt="" />Please Can you Submit A file. I am From Korea
+                            toe Check. <p><i class="fa fa-clock-o"></i>1:40am</p></a>
+                        <a href="#" title=""><img src="http://placehold.it/40x40" alt="" />Hey Today is Party So you Will Have to Come <p><i class="fa fa-clock-o"></i>4 Hours ago</p></a>
+                        <a href="inbox.html" class="view-all">VIEW ALL MESSAGE</a>
+                    </div>
+
+
+                </li>
+                <li><a title="" class="notification-btn"><i class="fa fa-bell"></i><span>4</span></a>
+                    <div class="notification">
+                        <span>You have 6 New Notification</span>
+                        <a href="#" title=""><img src="http://placehold.it/40x40" alt="" />Server 3 is Over Loader Pleas
+                            toe Check. <p><i class="fa fa-clock-o"></i>3:45pm</p></a>
+                        <a href="#" title=""><img src="http://placehold.it/40x40" alt="" />Server 10 is Over Loader Pleas
+                            toe Check. <p><i class="fa fa-clock-o"></i>1:40am</p></a>
+                        <a href="#" title=""><img src="http://placehold.it/40x40" alt="" />New User Registered Please Check This <p><i class="fa fa-clock-o"></i>4 Hours ago</p></a>
+                        <a href="#" class="view-all">VIEW ALL NOTIFICATIONS</a>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+    </header><!-- Header -->
+
+
+    <div class="menu">
+        <div class="menu-profile" id="intro3">
+            <a href="profile.html"><img class="img-circle" src="images/photo.jpg" alt="" /></a>
+
+            <div class="menu-profile-hover">
+                <h1><i>Tamera</i> Valentine</h1>
+                <p><i class="fa fa-map-marker"></i>SARASOTA, FLORIDA</p>
+                <a href="index.html" title=""><i class="fa fa-power-off"></i></a>
+                <div class="menu-profile-btns">
+                    <h3>
+                        <i class="fa fa-user blue"></i>
+                        <a href="profile.html" title="">PROFILE</a>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <ul>
+            <li><a href="wednesday_meal.html" title="" ><i class="fa fa-cutlery"></i>Today's Meal</a>
+                <ul>
+                    <li><a href="wednesday_meal.html" title="">Monday</a></li>
+                    <li><a href="wednesday_meal.html" title="">Tuesday</a></li>
+                    <li><a href="wednesday_meal.html" title="">Wednesday</a></li>
+                    <li><a href="wednesday_meal.html" title="">Thursday</a></li>
+                    <li><a href="wednesday_meal.html" title="">Friday</a></li>
+                    <li><a href="saturday_meal.html" title="">Saturday</a></li>
+                    <li><a href="wednesday_meal.html" title="">Sunday</a></li>
+                    <li><a href="" title="">Weekly Tips</a></li>
+                </ul>
+            </li>
+            <li><a href="week.html" title="" ><i class="fa fa-calendar"></i><span><i>20+</i></span>This Week</a></li>
+            <li><a href="list_fri.html" title="" ><i class="fa fa-shopping-cart"></i>Grocery List</a>
+                <ul>
+                    <li><a href="list.html" title="">All Ingredients</a></li>
+                    <li><a href="list_thur.html" title="">Thursday</a></li>
+                    <li><a href="list_mon.html" title="">Monday</a></li>
+                    <li><a href="list_fri.html" title="">Friday</a></li>
+                    <li><a href="list_tues.html" title="">Tuesday</a></li>
+                    <li><a href="list_sat.html" title="">Saturday</a></li>
+                    <li><a href="list_wed.html" title="">Wednesday</a></li>
+                    <li><a href="list_sun.html" title="">Sunday</a></li>
+                </ul>
+            </li>
+            <li><a href="" title="" ><i class="fa fa-thumbs-o-up"></i>Share</a></li>
+            <li><a href="" title="" ><i class="fa fa-money"></i>Earn cash</a></li>
+        </ul>
+    </div><!-- Right Menu -->
+	<div class="wrapper">
+		<div class="container">
+        <div class="row">
+			<div class="col-md-12">
+				<div class="heading-sec">
+					<h1>Wednesday <i>YOU CAN BE A COOK</i></h1>
+				</div>
+			</div>
+        </div>
+
+
+
+
+        <section>
+
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12">
+                            <div class="about-mock-up">
+                                <img class="img-responsive" src="images/main-wed.png" alt="" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div>
+                                <h3>Orecchiette in Creamed Corn with Wilted Tomatoes and Arugula
+                                </h3>
+                                <ul class="list-inline">
+                                <li><b><i class="fa fa-clock-o"></i> Prep:</b> 20 Minutes</li>
+                                <li><b><i class="fa fa-clock-o"></i> Cook:</b> 15 Minutes</li>
+                                </ul>
+                                <p class="lead">Protein: 20 grams per serving. Fresh-off-the-cob sweet corn, grape tomatoes, and pine nuts add a healthy boost to creamy pasta sauce. This dish is ready in just 35 minutes -- perfect for evenings when you don't feel like cooking.</p>
+
+                                    <ul class="pull-left list-inline">
+                                        <li><a href="#" title=""><i class="fa fa-facebook fa-2x"></i></a></li>
+                                        <li><a href="#" title=""><i class="fa fa-twitter fa-2x"></i></a></li>
+                                        <li><a href="#" title=""><i class="fa fa-pinterest fa-2x"></i></a></li>
+                                        <li><a href="#" title=""><i class="fa fa-print fa-2x"></i></a></li>
+
+                                    </ul>
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+            <hr/>
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="tdl-holder">
+                        <h2 class="pink">Ingredients</h2>
+                        <div class="tdl-content">
+                            <ul>
+                                <li><label><input type="checkbox"><i></i><span>4 ears fresh sweet corn</span></label></li>
+                                <li><label><input type="checkbox"><i></i><span>8 ounces dried orecchiette pasta</span></label></li>
+                                <li><label><input type="checkbox"><i></i><span>1/4 cup pine nuts</span></label></li>
+                                <li><label><input type="checkbox"><i></i><span>1 tablespoon olive oil</span></label></li>
+                                <li><label><input type="checkbox" ><i></i><span>1 cup grape tomatoes</span></label></li>
+                                <li><label><input type="checkbox"><i></i><span>1 medium shallot, thinly sliced</span></label></li>
+                                <li><label><input type="checkbox"><i></i><span>1 1/2 cups half-and-half or light cream</span></label></li>
+                                <li><label><input type="checkbox"><i></i><span>1/2 teaspoon sea salt or kosher salt</span></label></li>
+                                <li><label><input type="checkbox"><i></i><span>1/2 teaspoon freshly cracked black pepper</span></label></li>
+                                <li><label><input type="checkbox"><i></i><span>1/2 teaspoon freshly grated nutmeg or 1/4 teaspoon ground nutmeg</span></label></li>
+                                <li><label><input type="checkbox"><i></i><span>2 cups torn arugula</span></label></li>
+                                <li><label><input type="checkbox"><i></i><span>Sea salt and freshly cracked black pepper </span></label></li>
+                                <li><label><input type="checkbox"><i></i><span>2 ounces Pecorino Romano or Parmesan cheese, shaved</span></label></li>
+                            </ul>
+                        </div>
+                        <input type="text" class="tdl-new" placeholder="Add Your Own Items 'Enter'...">
+                    </div>
+                </div><!-- Todo list  -->
+                <div class="col-md-7">
+                    <div class="about-us">
+                        <h3>Directions</h3>
+
+                        <div class="swMain">
+                            <ul class="anchor list-inline">
+                                <li><a rel="1" isdone="1" class="selected"><span class="stepDesc">1</span>
+                                </a></li>
+                                <li></li>
+
+                            </ul>
+                        </div>
+
+
+                        <p>Remove husks from ears of corn. Scrub with a stiff brush to remove silks; rinse. Cut kernels from cobs; set kernels aside. Discard cobs. In a 5- to 6-quart Dutch oven cook pasta in lightly salted boiling water for 12 to 15 minutes or until al dente. Remove 1/2 cup of the pasta water; set aside. Drain pasta; return pasta to the Dutch oven.</p>
+                        <div class="swMain">
+                            <ul class="anchor">
+                                <li><a rel="1" isdone="1" class="selected"><span class="stepDesc">2</span>
+                                </a></li>
+
+                            </ul>
+                        </div>
+                        <p>Meanwhile, in a very large skillet cook pine nuts over medium heat for 2 to 3 minutes or just until toasted. Remove pine nuts from skillet; set aside. </p>
+                        <div class="swMain">
+                            <ul class="anchor">
+                                <li><a rel="1" isdone="1" class="selected"><span class="stepDesc">3</span>
+                                </a></li>
+
+                            </ul>
+                        </div>
+                        <p>
+                            For sauce, heat the olive oil in the skillet over medium heat. Add corn kernels, tomatoes, and shallot. Cook for 5 to 7 minutes or until corn begins to brown and shallot is tender, stirring occasionally. Stir in half-and-half and the reserved pasta water. Bring to boiling. Boil gently, uncovered, for 5 minutes, stirring occasionally. Stir in 1/2 teaspoon sea salt, 1/2 teaspoon pepper, and the nutmeg. Pour sauce over pasta in pot. Add arugula and toss until well combined. Season with additional sea salt and cracked black pepper.
+                        </p>
+
+                        <div class="swMain">
+                            <ul class="anchor">
+                                <li><a rel="1" isdone="1" class="selected"><span class="stepDesc">4</span>
+                                </a></li>
+
+                            </ul>
+                        </div>
+                        <p>
+                            To serve, divide pasta mixture among bowls. Top with cheese and toasted pine nuts.
+                        </p>
+
+                        <ul class="pull-left list-inline">
+                            <li><a href="#" title=""><i class="fa fa-facebook fa-2x"></i></a></li>
+                            <li><a href="#" title=""><i class="fa fa-twitter fa-2x"></i></a></li>
+                            <li><a href="#" title=""><i class="fa fa-pinterest fa-2x"></i></a></li>
+                            <li><a href="#" title=""><i class="fa fa-print fa-2x"></i></a></li>
+
+                        </ul>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+
+
+
+    </div><!-- Container -->
+	</div><!-- Wrapper -->
+	
+
+
+
+</body>
+</html>

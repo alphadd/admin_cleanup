@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:700,400' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+
+<!-- Styles -->
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" /><!-- Bootstrap -->
+<link rel="stylesheet" href="font-awesome-4.0.3/css/font-awesome.css" type="text/css" /><!-- Font Awesome -->
+
+<link rel="stylesheet" type="text/css" media="all" href="css/daterangepicker-bs3.css" /><!-- Date Range Picker -->
+<link rel="stylesheet" href="css/style.css" type="text/css" /><!-- Style -->	
+<link rel="stylesheet" href="css/responsive.css" type="text/css" /><!-- Responsive -->	
+
+
+
+ 
+<!-- Script -->
+<script src="js/jquery-1.10.2.js"></script><!-- Jquery -->
+<script type="text/javascript"  src="js/bootstrap.min.js"></script><!-- Bootstrap -->
+<script type="text/javascript"  src="js/script.js"></script><!-- Script -->
+<script src="js/enscroll-0.5.2.min.js"></script> <!-- Custom Scroll bar -->
+<script src="js/moment.js"></script> <!-- Date Range Picker -->
+<script src="js/daterangepicker.js"></script><!-- Date Range Picker -->
+
+</head>
+<body>
+		<div class="responsive-menu">
+			<div class="responsive-menu-dropdown blue">
+				<a title="" class="blue">MENU <i class="fa fa-align-justify" ></i></a>
+			</div>
+			<ul>
+			<li id="intro4"><a href="#" title="" ><i class="fa fa-desktop"></i><span><i>4</i></span>Discover</a>
+				<ul>
+					<li><a href="dashboard.html" title="">Dashboard 1</a></li>
+					<li><a href="dashboard2.html" title="">Dashboard 2</a></li>
+					<li><a href="dashboard3.html" title="">Dashboard 3</a></li>
+					<li><a href="dashboard4.html" title="">Dashboard 4</a></li>
+					<li><a href="dashboard5.html" title="">Wide Dashboard</a></li>
+				</ul>			
+			</li>
+			<li id="intro5"><a href="widget.html" title="" ><i class="fa fa-heart-o"></i>Widget</a></li>
+			<li><a href="#" title="" ><i class="fa fa-tint"></i><span><i>12</i></span>Ui Kit</a>
+				<ul>
+					<li><a href="notifications.html" title="">Notifications</a></li>
+					<li><a href="grids.html" title="">Grids</a></li>
+					<li><a href="buttons.html" title="">Buttons</a></li>
+					<li><a href="calendars.html" title="">Calendars</a></li>
+					<li><a href="file-manager.html" title="">File Manager</a></li>
+					<li><a href="timeline.html" title="">Liquid Timeline</a></li>
+					<li><a href="gallery.html" title="">Simple Gallery</a></li>
+					<li><a href="gallery2.html" title="">Gallery Manager</a></li>
+					<li><a href="slider.html" title="">Slider</a></li>
+					<li><a href="page-tour.html" title="">Page Tour</a></li>
+					<li><a href="collapse.html" title="">Collapse</a></li>
+					<li><a href="range-slider.html" title="">Range Slider</a></li>
+					<li><a href="typography.html" title="">Typography</a></li>
+					<li><a href="tables.html" title="">Tables</a></li>
+				</ul>
+			</li>
+			<li><a href="form.html" title="" ><i class="fa fa-paperclip"></i>Form Stuff</a></li>
+			<li><a href="charts.html" title="" ><i class="fa fa-unlink"></i><span><i>5+</i></span>Charts</a></li>
+			<li><a href="#" title="" ><i class="fa fa-rocket"></i><span><i>8+</i></span>Pages</a>
+				<ul>
+					<li><a href="invoice.html" title="">Invoice</a></li>
+					<li><a href="order-recieved.html" title="">Order Recieved</a></li>
+					<li><a href="search-result.html" title="">Search Result</a></li>
+					<li><a href="price-table.html" title="">Price Table</a></li>
+					<li><a href="inbox.html" title="">Inbox</a></li>
+					<li><a href="profile.html" title="">Profile</a></li>
+					<li><a href="contact.html" title="">Contact Us</a></li>
+					<li><a href="css-spinners.html" title="">Css Spinners</a></li>
+				</ul>			
+			</li>
+			<li><a href="#" title="" ><i class="fa fa-thumbs-o-up"></i><span><i>6+</i></span>Bonus</a>
+				<ul>
+
+					<li><a href="faq.html" title="">Faq</a></li>
+					<li><a href="index.html" title="">Log in</a></li>
+					<li><a href="blank.html" title="">blank</a></li>
+					<li><a href="cart.html" title="">Cart</a></li>
+					<li><a href="billing.html" title="">Billing</a></li>
+					<li><a href="icons.html" title="">Icons</a></li>
+				</ul>		
+			</li>
+		</ul>
+	</div>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="" />
+        </div>
+
+        <div aria-hidden="true" role="dialog" tabindex="-1" class="modal fade" id="add-post-title" style="display: none;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header blue">
+                        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                        <h4 class="modal-title">Setting Section</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" placeholder="TITLE" />
+                        <textarea placeholder="DESCRIPTION"  rows="5"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button data-dismiss="modal" class="btn btn-default black" type="button">Close</button>
+                        <button class="btn btn-primary blue" type="button">Save changes</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div>
+        </div>
+        <div class="header-alert">
+            <ul>
+                <li><a title="" class="message-btn"><i class="fa fa-envelope"></i><span>3</span></a>
+                    <div class="message">
+                        <span>You have 3 New Messages</span>
+                        <a href="#" title=""><img src="http://placehold.it/40x40" alt="" />Hey! How are You Diana. I waiting for you.
+                            toe Check. <p><i class="fa fa-clock-o"></i>3:45pm</p></a>
+                        <a href="#" title=""><img src="http://placehold.it/40x40" alt="" />Please Can you Submit A file. I am From Korea
+                            toe Check. <p><i class="fa fa-clock-o"></i>1:40am</p></a>
+                        <a href="#" title=""><img src="http://placehold.it/40x40" alt="" />Hey Today is Party So you Will Have to Come <p><i class="fa fa-clock-o"></i>4 Hours ago</p></a>
+                        <a href="inbox.html" class="view-all">VIEW ALL MESSAGE</a>
+                    </div>
+
+
+                </li>
+                <li><a title="" class="notification-btn"><i class="fa fa-bell"></i><span>4</span></a>
+                    <div class="notification">
+                        <span>You have 6 New Notification</span>
+                        <a href="#" title=""><img src="http://placehold.it/40x40" alt="" />Server 3 is Over Loader Pleas
+                            toe Check. <p><i class="fa fa-clock-o"></i>3:45pm</p></a>
+                        <a href="#" title=""><img src="http://placehold.it/40x40" alt="" />Server 10 is Over Loader Pleas
+                            toe Check. <p><i class="fa fa-clock-o"></i>1:40am</p></a>
+                        <a href="#" title=""><img src="http://placehold.it/40x40" alt="" />New User Registered Please Check This <p><i class="fa fa-clock-o"></i>4 Hours ago</p></a>
+                        <a href="#" class="view-all">VIEW ALL NOTIFICATIONS</a>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+    </header><!-- Header -->
+
+
+    <div class="menu">
+        <div class="menu-profile" id="intro3">
+            <a href="profile.html"><img class="img-circle" src="images/photo.jpg" alt="" /></a>
+
+            <div class="menu-profile-hover">
+                <h1><i>Tamera</i> Valentine</h1>
+                <p><i class="fa fa-map-marker"></i>SARASOTA, FLORIDA</p>
+                <a href="index.html" title=""><i class="fa fa-power-off"></i></a>
+                <div class="menu-profile-btns">
+                    <h3>
+                        <i class="fa fa-user blue"></i>
+                        <a href="profile.html" title="">PROFILE</a>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <ul>
+            <li><a href="wednesday_meal.html" title="" ><i class="fa fa-cutlery"></i>Today's Meal</a>
+                <ul>
+                    <li><a href="wednesday_meal.html" title="">Monday</a></li>
+                    <li><a href="wednesday_meal.html" title="">Tuesday</a></li>
+                    <li><a href="wednesday_meal.html" title="">Wednesday</a></li>
+                    <li><a href="wednesday_meal.html" title="">Thursday</a></li>
+                    <li><a href="wednesday_meal.html" title="">Friday</a></li>
+                    <li><a href="saturday_meal.html" title="">Saturday</a></li>
+                    <li><a href="wednesday_meal.html" title="">Sunday</a></li>
+                    <li><a href="" title="">Weekly Tips</a></li>
+                </ul>
+            </li>
+            <li><a href="week.html" title="" ><i class="fa fa-calendar"></i><span><i>20+</i></span>This Week</a></li>
+            <li><a href="list_fri.html" title="" ><i class="fa fa-shopping-cart"></i>Grocery List</a>
+                <ul>
+                    <li><a href="list.html" title="">All Ingredients</a></li>
+                    <li><a href="list_thur.html" title="">Thursday</a></li>
+                    <li><a href="list_mon.html" title="">Monday</a></li>
+                    <li><a href="list_fri.html" title="">Friday</a></li>
+                    <li><a href="list_tues.html" title="">Tuesday</a></li>
+                    <li><a href="list_sat.html" title="">Saturday</a></li>
+                    <li><a href="list_wed.html" title="">Wednesday</a></li>
+                    <li><a href="list_sun.html" title="">Sunday</a></li>
+                </ul>
+            </li>
+            <li><a href="" title="" ><i class="fa fa-thumbs-o-up"></i>Share</a></li>
+            <li><a href="" title="" ><i class="fa fa-money"></i>Earn cash</a></li>
+        </ul>
+    </div><!-- Right Menu -->
+
+	<div class="wrapper">
+		<div class="container">
+			<div class="col-md-6">
+				<div class="heading-sec">
+					<h1>Saturday <i>YOU CAN BE A COOK</i></h1>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                  <i class="fa fa-calendar-o icon-calendar icon-large"></i>
+                  <span></span> <b class="caret"></b>
+               </div>
+			</div>
+
+
+
+
+        <section>
+
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="about-mock-up">
+                                <img src="images/main_sat.png" alt="" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div>
+                                <h3>Island Pork Tenderloin Salad
+                                </h3>
+                                <p> <i class="fa fa-clock-o"></i> 30 Minutes</p>
+                                <p>Special equipment needed: an instant-read thermometer.</p>
+
+                                    <ul class="pull-left list-inline">
+                                        <li><a href="#" title=""><i class="fa fa-facebook fa-2x"></i></a></li>
+                                        <li><a href="#" title=""><i class="fa fa-twitter fa-2x"></i></a></li>
+                                        <li><a href="#" title=""><i class="fa fa-pinterest fa-2x"></i></a></li>
+                                        <li><a href="#" title=""><i class="fa fa-print fa-2x"></i></a></li>
+
+                                    </ul>
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+            <hr/>
+
+
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="tdl-holder">
+                        <h2 class="pink">Ingredients for Pork</h2>
+                        <div class="tdl-content">
+                            <ul>
+                                <li><label><input type="checkbox"><i></i><span>2 teaspoons salt
+</span><a href='#'>–</a></label></li>
+                                <li><label><input type="checkbox" checked><i></i><span>1/2 teaspoon black pepper</span><a href='#'>–</a></label></li>
+                                <li><label><input type="checkbox"><i></i><span> 1 teaspoon ground cumin</span><a href='#'>–</a></label></li>
+                                <li><label><input type="checkbox" checked><i></i><span>1 teaspoon chili powder</span><a href='#'>–</a></label></li>
+                                <li><label><input type="checkbox" checked><i></i><span>1 teaspoon cinnamon</span><a href='#'>–</a></label></li>
+                            </ul>
+                        </div>
+
+                        <h2 class="pink">For Glaze</h2>
+                        <div class="tdl-content">
+                            <ul>
+                                <li><label><input type="checkbox"><i></i><span>2 teaspoons salt
+</span><a href='#'>–</a></label></li>
+                                <li><label><input type="checkbox" checked><i></i><span>1/2 teaspoon black pepper</span><a href='#'>–</a></label></li>
+                                <li><label><input type="checkbox"><i></i><span> 1 teaspoon ground cumin</span><a href='#'>–</a></label></li>
+                                <li><label><input type="checkbox" checked><i></i><span>1 teaspoon chili powder</span><a href='#'>–</a></label></li>
+                                <li><label><input type="checkbox" checked><i></i><span>1 teaspoon cinnamon</span><a href='#'>–</a></label></li>
+                            </ul>
+                        </div>
+
+                        <h2 class="pink">For Vinaigrette</h2>
+                        <div class="tdl-content">
+                            <ul>
+                                <li><label><input type="checkbox"><i></i><span>2 teaspoons salt
+</span><a href='#'>–</a></label></li>
+                                <li><label><input type="checkbox" checked><i></i><span>1/2 teaspoon black pepper</span><a href='#'>–</a></label></li>
+                                <li><label><input type="checkbox"><i></i><span> 1 teaspoon ground cumin</span><a href='#'>–</a></label></li>
+                                <li><label><input type="checkbox" checked><i></i><span>1 teaspoon chili powder</span><a href='#'>–</a></label></li>
+                                <li><label><input type="checkbox" checked><i></i><span>1 teaspoon cinnamon</span><a href='#'>–</a></label></li>
+                            </ul>
+                        </div>
+                        <input type="text" class="tdl-new" placeholder="Add Your Own Items 'Enter'...">
+                    </div>
+                </div><!-- Todo list  -->
+                <div class="col-md-6">
+                    <div class="about-us">
+                        <h3>Directions
+                        </h3>
+
+                        <div class="swMain">
+                            <ul class="anchor">
+                                <li><a rel="1" isdone="1" class="selected"><span class="stepDesc">1</span>
+                                </a></li>
+
+                            </ul>
+                        </div>
+
+                        <p>
+
+                            Serve with Steamed Broccoli
+                        </p>
+
+                        <div class="swMain">
+                            <ul class="anchor">
+                                <li><a rel="1" isdone="1" class="selected"><span class="stepDesc">2</span>
+                                </a></li>
+
+                            </ul>
+                        </div>
+                        <p>Pre-heat oven to 375. Place Chicken Breasts
+                            on a baking sheet or dish and cook for 15 min. or until thoroughly cooked.</p>
+
+
+                        <div class="swMain">
+                            <ul class="anchor">
+                                <li><a rel="1" isdone="1" class="selected"><span class="stepDesc">3</span>
+                                </a></li>
+
+                            </ul>
+                        </div>
+                        <p>
+                            For Roasted Potatoes:
+                            Pre-heat oven to 375.
+                        </p>
+
+                        <div class="swMain">
+                            <ul class="anchor">
+                                <li><a rel="1" isdone="1" class="selected"><span class="stepDesc">4</span>
+                                </a></li>
+
+                            </ul>
+                        </div>
+                        <p>
+                            Mix together diced Red Potatoes, Olive Oil, Dried
+                            Thyme, and Salt & Pepper and place on a cookie sheet. Roast Potatoes for
+                            55 mins.
+                        </p>
+
+                        <ul class="pull-left list-inline">
+                            <li><a href="#" title=""><i class="fa fa-facebook fa-2x"></i></a></li>
+                            <li><a href="#" title=""><i class="fa fa-twitter fa-2x"></i></a></li>
+                            <li><a href="#" title=""><i class="fa fa-pinterest fa-2x"></i></a></li>
+                            <li><a href="#" title=""><i class="fa fa-print fa-2x"></i></a></li>
+
+                        </ul>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+
+
+
+    </div><!-- Container -->
+	</div><!-- Wrapper -->
+	
+
+
+
+</body>
+</html>
